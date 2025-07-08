@@ -1,0 +1,21 @@
+syntax = "proto3";
+package finance;
+
+option go_package = "go/finance;finance";
+
+
+
+service financeService {
+  rpc Login(LoginRequest1) returns (LoginResponse1);
+}
+
+message LoginRequest1 {
+  string email = 1;
+  string password = 2;
+}
+
+message LoginResponse1 {
+  string access_token = 1;
+  string refresh_token = 2;
+  string user_id = 3;
+}
